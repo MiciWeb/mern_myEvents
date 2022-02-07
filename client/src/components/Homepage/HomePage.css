@@ -1,0 +1,108 @@
+section {
+  height: 510px;
+  width: 950px;
+  margin: auto;
+}
+.left {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 595px;
+  height: 660px;
+  background: url("https://preview.colorlib.com/theme/safario/img/home/xbg-shape-left.png.pagespeed.ic.ONvKibGnkz.png")
+    left center no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.right {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 655px;
+  height: 750px;
+  background: url(https://preview.colorlib.com/theme/safario/img/home/xbg-shape-right.png.pagespeed.ic.pBHozu_vgR.png)
+    left center no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.hero {
+  display: flex;
+}
+section > div {
+  height: 100%;
+}
+.hero-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.hero-container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 55%;
+  width: 83%;
+}
+.hero-container-text h3 {
+  font-size: 38px;
+  font-weight: 400;
+  color: #161c2d;
+  margin-bottom: 15px;
+}
+.hero-container-text p {
+  color: #869ab7;
+  margin-bottom: 20px;
+}
+.search-bar {
+  width: 60%;
+  height: 40px;
+  border: 1px solid rgb(189, 186, 186);
+  border-radius: 4px;
+  padding-right: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-left: 6px;
+}
+.search-date {
+  width: 60%;
+  height: 40px;
+  border: 1px solid rgb(189, 186, 186);
+  border-radius: 4px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  padding-left: 6px;
+  background: white;
+}
+.logo-type {
+  position: absolute;
+  width: 22px;
+  transform: translate(-70px, 11px);
+}
+.select-type {
+  position: absolute;
+  width: 18px;
+  border: none;
+  transform: translate(-46px, 13px);
+  cursor: pointer;
+  background: white;
+}
+.select-type:focus {
+  outline: none;
+}
+.hero-2 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image-container {
+  width: 100%;
+  height: 100%;
+}
+.hero-image {
+  width: 121%;
+  height: 96%;
+}
