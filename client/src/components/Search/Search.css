@@ -66,8 +66,9 @@ section > div {
     border-top-right-radius: 4px;
     transform: translate(0px, -177px);
 }
-.adresse {
+.address {
     font-size: 14px;
+    color: black;
 }
 .email {
     font-size: 12px;

@@ -24,11 +24,6 @@ const App = () => {
       .then((data) => setData(data.records))
   }, [])
 
-  data.map((item) => {
-    console.log(item.fields.address)
-  })
-
-
   return (
     <div>
       <section className="section2">
@@ -57,38 +52,27 @@ const App = () => {
           </div>
           <div className="hero-2-search">
             <div className="hero-cards-container">
-              {/* {data?.map((item) => { */}
-              <div className="card">
-                <div className="test">
-                  <img className="card-img" src="item.ImageUrl" />
-                  <div className="overlay"></div>
-                  <div className="logos">
-                    <i className="fa fa-wifi"></i>
-                    <i className="fa fa-desktop"></i>
-                    <i className="fa fa-print"></i>
-                    <i> <img className="trois" src={svg} /> </i>
+              {data.map((item) => {
+                return (
+                  <div className="card">
+                    <div className="test">
+                      <img className="card-img" src="item.ImageUrl" />
+                      <div className="overlay"></div>
+                    </div>
+                    <div className="card-text">
+                      <h4>{item.fields.description}</h4>
+                      <p className="address">{item.fields.address}</p>
+                      <p className="email">{console.log(item)}</p>
+                    </div>
                   </div>
-                  <select className="arrow">
-                    <option>Tarifs</option>
-                    <option>Chambres lit jumeaux 98€</option>
-                    <option>Chambre double standard 138€</option>
-                    <option>Chambre triple standard 158€</option>
-                  </select>
-                </div>
-                <div className="env"> <span className="texte">Espace travail </span><span className="number">6.0</span></div>
-                <div className="card-text">
-                  <h4>item.HtlName</h4>
-                  <p className="adresse">item.HtlAddress1</p>
-                  <p className="email">item.HtlEmail</p>
-                </div>
-              </div>
-              {/* })} */}
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
-    </div>
+    </div >
   )
 }
 
