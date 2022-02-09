@@ -6,20 +6,27 @@ import locate from "../image/icon-locate.png"
 const App = () => {
   const [data, setData] = useState([])
 
-  // const token = process.env.REACT_APP_HACK_API_KEY
+  const [adress, setAdress] = useState("")
+  const [city, setCity] = useState("")
+  const [title, setTitle] = useState("")
+  const [startDate, setStartDate] = useState("")
 
   var requestOptions = {
     method: 'GET',
   };
 
   const getData = () =>
-    fetch("https://bookings.cdsgroupe.com/api-hackathon/v1/Hotels?city=Lyon&from=160&to=4", requestOptions)
+    fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&refine.city=${"Paris"}`, requestOptions)
       .then((res) => res.json())
 
   useEffect(() => {
     getData()
-      .then((data) => console.log(data))
+      .then((data) => setData(data.records))
   }, [])
+
+  data.map((item) => {
+    console.log(item.fields.address)
+  })
 
 
   return (
@@ -31,42 +38,34 @@ const App = () => {
               <div className="aside">
                 <div className="subtitle">Localisation</div>
                 <div className="hr" />
-                <input className="select-type-search custom" value="Lyon" />
+                <input className="select-type-search custom" placeholder="Lyon" />
                 <img className="locate" src={locate} />
               </div>
               <div className="aside">
-                <div className="subtitle">Type d'espace</div>
+                <div className="subtitle">Type d'événement</div>
                 <div className="hr" />
-                <select className="select-type-search">
-                  <option>Open space</option>
-                  <option>Bureau fermé</option>
-                  <option>Salle de réunion</option>
-                </select>
+                <input className="select-type-search custom" placeholder="Lyon" />
+                <img className="locate" src={locate} />
               </div>
               <div className="aside">
-                <div className="subtitle">Durée</div>
+                <div className="subtitle">Date de début</div>
                 <div className="hr" />
-                <select className="select-type-search">
-                  <option>À la journée</option>
-                  <option>Au mois</option>
-                  <option>À l'année</option>
-                  <option>À l'heure</option>
-                </select>
+                <input className="select-type-search custom" onChange={(e) => setStartDate(e.target.value)} type="date" />
+                <img className="locate" src={locate} />
               </div>
             </div>
           </div>
           <div className="hero-2-search">
             <div className="hero-cards-container">
               {/* {data?.map((item) => { */}
-              {/* return ( */}
               <div className="card">
                 <div className="test">
                   <img className="card-img" src="item.ImageUrl" />
                   <div className="overlay"></div>
                   <div className="logos">
-                    <i class="fa fa-wifi"></i>
-                    <i class="fa fa-desktop"></i>
-                    <i class="fa fa-print"></i>
+                    <i className="fa fa-wifi"></i>
+                    <i className="fa fa-desktop"></i>
+                    <i className="fa fa-print"></i>
                     <i> <img className="trois" src={svg} /> </i>
                   </div>
                   <select className="arrow">
@@ -83,7 +82,6 @@ const App = () => {
                   <p className="email">item.HtlEmail</p>
                 </div>
               </div>
-              {/* ) */}
               {/* })} */}
             </div>
           </div>

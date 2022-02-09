@@ -1,7 +1,6 @@
 import logo from "../image/type.png"
 import hero from "../image/hero.svg"
 import { Link } from "react-router-dom"
-
 import "./HomePage.css"
 
 export default function HomePage() {
