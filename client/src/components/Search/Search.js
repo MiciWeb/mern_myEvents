@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div>
-      <section className="section2">
+      <section className="search-section">
         <div className="hero-search">
           <div className="hero-1-search">
             <div className="search-container-search">
@@ -40,13 +40,11 @@ const App = () => {
                 <div className="subtitle">Type d'événement</div>
                 <div className="hr" />
                 <input className="select-type-search custom" placeholder="Lyon" />
-                <img className="locate" src={locate} />
               </div>
               <div className="aside">
                 <div className="subtitle">Date de début</div>
                 <div className="hr" />
                 <input className="select-type-search custom" onChange={(e) => setStartDate(e.target.value)} type="date" />
-                <img className="locate" src={locate} />
               </div>
             </div>
           </div>
@@ -55,14 +53,12 @@ const App = () => {
               {data.map((item) => {
                 return (
                   <div className="card">
-                    <div className="test">
-                      <img className="card-img" src="item.ImageUrl" />
-                      <div className="overlay"></div>
+                    <div className="card-img">
+                      <h4 className="description">{item.fields.description}</h4>
                     </div>
                     <div className="card-text">
-                      <h4>{item.fields.description}</h4>
                       <p className="address">{item.fields.address}</p>
-                      <p className="email">{console.log(item)}</p>
+                      {console.log(item)}
                     </div>
                   </div>
                 )
@@ -71,8 +67,7 @@ const App = () => {
           </div>
         </div>
       </section>
-
-    </div >
+    </div>
   )
 }
 
