@@ -112,23 +112,32 @@ const Search = (props) => {
           </div>
           <div className="hero-2-search">
             <div className="hero-cards-container">
-              {data?.map((item, i) => {
-                if (item.fields.address.toLowerCase().indexOf(address?.toLowerCase()) === -1 || item.fields.title?.toLowerCase().indexOf(title.toLowerCase()) === -1) {
-                  return
-                }
-                return (
-                  <div key={i} className="card">
-                    <div className="card-img">
-                      <h4 className="description">{item.fields.title}</h4>
-                      <p className="address">{item.fields.address}</p>
-                    </div>
-                    <div className="card-text">
-                      <p className="address">{item.fields.city}</p>
-                    </div>
-                    <p className="address">{item.fields.date_start}</p>
-                  </div>
-                )
-              })}
+              {data.length == 0 ? (
+                <>
+                  <h1>Aucun évènement à cette date</h1>
+                  {console.log("Aucun évènement à cette date")}
+                </>
+              ) : (
+                  <>
+                    {data?.map((item, i) => {
+                      if (item.fields.address.toLowerCase().indexOf(address?.toLowerCase()) === -1 || item.fields.title?.toLowerCase().indexOf(title.toLowerCase()) === -1) {
+                        return
+                      }
+                      return (
+                        <div key={i} className="card">
+                          <div className="card-img">
+                            <h4 className="description">{item.fields.title}</h4>
+                            <p className="address">{item.fields.address}</p>
+                          </div>
+                          <div className="card-text">
+                            <p className="address">{item.fields.city}</p>
+                          </div>
+                          <p className="address">{item.fields.date_start}</p>
+                        </div>
+                      )
+                    })}
+                  </>
+                )}
             </div>
           </div>
         </div>
