@@ -82,6 +82,7 @@ section {
     width: 280px;
     padding: 10px;
     border-radius: 4px;
+    border: 1px solid #CCCCCC;
     background-color: white;
 }
 .logos {

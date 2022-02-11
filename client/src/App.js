@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { render } from "react-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar"
 import HomePage from "./components/Homepage/HomePage"
 import Search from "./components/Search/Search"
