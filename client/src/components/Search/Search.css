@@ -24,13 +24,14 @@ section {
     gap: 30px;
 }
 .aside {
-    margin-top: 35px;
+    margin-bottom: 25px;
+    margin-top: 2Opx;
 }
 .hero-cards-container > div {
     border-radius: 4px;
 }
 .card {
-    height: 140px;
+    height: 180px;
     border: 1px solid;
     overflow: auto;
 }
