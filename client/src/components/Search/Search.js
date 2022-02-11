@@ -1,6 +1,7 @@
 import "./Search.css"
 import { useEffect, useState } from 'react'
 import Select from 'react-select';
+import { useLocation } from "react-router-dom";
 
 const options = [
   { label: 'Paris' },
@@ -21,7 +22,6 @@ const options = [
 ];
 
 const Search = (props) => {
-  console.log(props)
   const [data, setData] = useState([])
   const [selectedOption, setSelectedOption] = useState(null);
   const [address, setAddress] = useState("")
@@ -29,17 +29,30 @@ const Search = (props) => {
   const [title, setTitle] = useState("")
   const [startDate, setStartDate] = useState("")
 
+  const location = useLocation()
+
   var requestOptions = {
     method: 'GET',
   };
 
-  function getData(e) {
-    e.preventDefault();
-    fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&rows=100&refine.city=${city.label}&refine.date_start=${startDate}`, requestOptions)
+  useEffect(() => {
+    fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${location.state.city}`, requestOptions)
       .then((res) => res.json())
       .then((data) => setData(data.records))
-  }
+  }, [])
 
+  function getData(e) {
+    e.preventDefault();
+    if (startDate === "") {
+      fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${city.label}`, requestOptions)
+        .then((res) => res.json())
+        .then((data) => setData(data.records))
+    } else {
+      fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${city.label}&refine.date_start=${startDate}`, requestOptions)
+        .then((res) => res.json())
+        .then((data) => setData(data.records))
+    }
+  }
 
   return (
     <div>
@@ -86,7 +99,7 @@ const Search = (props) => {
                   defaultValue={setCity}
                   onChange={setCity}
                   options={options}
-                  // defaultValue={{ label: "Ex: Paris", value: 0 }}
+                  defaultValue={{ label: location.state.city, value: 0 }}
                 />
               </div>
 
@@ -99,8 +112,8 @@ const Search = (props) => {
           </div>
           <div className="hero-2-search">
             <div className="hero-cards-container">
-              {data.map((item, i) => {
-                if (item.fields.address.toLowerCase().indexOf(address.toLowerCase()) === -1 || item.fields.title.toLowerCase().indexOf(title.toLowerCase()) === -1)   {
+              {data?.map((item, i) => {
+                if (item.fields.address.toLowerCase().indexOf(address?.toLowerCase()) === -1 || item.fields.title?.toLowerCase().indexOf(title.toLowerCase()) === -1) {
                   return
                 }
                 return (

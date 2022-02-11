@@ -24,19 +24,12 @@ const options = [
     { label: 'Dijon' },
 ];
 
-export default function HomePage() {
-    const [isActive, setIsActive] = useState(false)
+export default function HomePage(props) {
     const [city, setCity] = useState("")
     const [startDate, setStartDate] = useState("")
-    const [data, setData] = useState([])
-
-    var requestOptions = {
-        method: 'GET',
-    };
 
     return (
         <div>
-            {!isActive ? (
                 <section>
                     <div className="hero">
                         <div className="hero-1">
@@ -44,11 +37,16 @@ export default function HomePage() {
                                 <h3>Bienvenue à <span style={{ color: "#3a50f8" }}>WorkAway</span>.<br /> La solution du travail de demain.</h3>
                                 <p>WorkAway est une plateforme qui met à disposition des espaces de travail dans les hôtels accessibles à tous et pour tous types de besoins.</p>
                                 <div className="search-container">
+                                    <Select
+                                        defaultValue={setCity}
+                                        onChange={setCity}
+                                        options={options}
+                                        defaultValue={{ label: "Ville", value: 0 }}
+                                    />
                                     <br />
-                                    <Link to="/search">
-                                        <button
+                                    <Link to="/search" state={{ city: city.label, startDate: startDate, }}>
+                                        <button onClick={() => props.setCity(city.label)}
                                             className="button"
-                                            onClick={() => setIsActive(true)}
                                         >
                                             Rechercher
                                         </button>
@@ -65,10 +63,6 @@ export default function HomePage() {
                         <div className="right"></div>
                     </div>
                 </section>
-            ) : (
-                    <Search item={"oui"} item2="non" />
-                )
-            }
         </div >
     )
 }
