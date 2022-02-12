@@ -5,11 +5,9 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar"
 import Search from "./components/Search/Search"
-import Select from 'react-select';
-import { useState } from 'react'
 import './App.css';
-import hero from "./components/image/hero.svg"
 import HomePage from "./components/Homepage/HomePage";
+import SearchDetails from "./components/Search/SearchDetails";
 
 const options = [
   { label: 'Paris' },
@@ -30,17 +28,15 @@ const options = [
 ];
 
 const App = () => {
-  const [city, setCity] = useState("")
-  const [startDate, setStartDate] = useState("")
-  const [issou, setIssou] = useState("yatangaki")
-  
+
   return (
     <div className="main">
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" exact={true} element={<HomePage setCity={setCity} />} />
-          <Route path="/search" exact={true} element={<Search city={city} />} />
+          <Route path="/" exact={true} element={<HomePage />} />
+          <Route path="/search" exact={true} element={<Search />} />
+          <Route path="/search/:id" exact={true} element={<SearchDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,17 @@
+export const options = [
+    { label: 'Paris' },
+    { label: 'Marseille' },
+    { label: 'Lyon' },
+    { label: 'Strasbourg' },
+    { label: 'Nice' },
+    { label: 'Toulouse' },
+    { label: 'Nantes' },
+    { label: 'Montpellier' },
+    { label: 'Bordeaux' },
+    { label: 'Lille' },
+    { label: 'Rennes' },
+    { label: 'Reims' },
+    { label: 'Toulons' },
+    { label: 'Grenoble' },
+    { label: 'Dijon' },
+  ];

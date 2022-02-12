@@ -1,28 +1,9 @@
-import logo from "../image/type.png"
-import hero from "../image/hero.svg"
+import hero from "../../image/hero.svg"
 import { Link } from "react-router-dom"
 import "./HomePage.css"
-import Search from "../Search/Search"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Select from 'react-select';
-
-const options = [
-    { label: 'Paris' },
-    { label: 'Marseille' },
-    { label: 'Lyon' },
-    { label: 'Strasbourg' },
-    { label: 'Nice' },
-    { label: 'Toulouse' },
-    { label: 'Nantes' },
-    { label: 'Montpellier' },
-    { label: 'Bordeaux' },
-    { label: 'Lille' },
-    { label: 'Rennes' },
-    { label: 'Reims' },
-    { label: 'Toulons' },
-    { label: 'Grenoble' },
-    { label: 'Dijon' },
-];
+import {options} from "../city-data"
 
 export default function HomePage(props) {
     const [city, setCity] = useState("")
