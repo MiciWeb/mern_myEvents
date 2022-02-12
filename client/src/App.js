@@ -8,6 +8,7 @@ import Search from "./components/Search/Search"
 import './App.css';
 import HomePage from "./components/Homepage/HomePage";
 import SearchDetails from "./components/Search/SearchDetails";
+import Login from "./components/Login/Login";
 
 const options = [
   { label: 'Paris' },
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/" exact={true} element={<HomePage />} />
           <Route path="/search" exact={true} element={<Search />} />
           <Route path="/search/:id" exact={true} element={<SearchDetails />} />
+          <Route path="/login" exact={true} element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

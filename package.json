@@ -1,0 +1,25 @@
+{
+  "name": "myevents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechIT2020/W-SPE-502-PAR-2-1-events-micipsa.sersour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechIT2020/W-SPE-502-PAR-2-1-events-micipsa.sersour/issues"
+  },
+  "homepage": "https://github.com/EpitechIT2020/W-SPE-502-PAR-2-1-events-micipsa.sersour#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
