@@ -5,6 +5,7 @@ const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
+require("./config/db");
 
 app.use(
     cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
