@@ -20,12 +20,14 @@ export default function Navbar({ user }) {
                     </ul>
                     {user ? (
                         <div>
-                            Bonjour {user.displayName}
+                            <Link to="/profil">
+                                {user.username}
                             <img
-                                src={user.photos[0].value}
-                                alt="profil-picture"
-                                className="avatar"
-                            />
+                                    src={user.photos[0].value}
+                                    alt="profil-picture"
+                                    className="avatar"
+                                />
+                            </Link>
                             <Link to="/logout"><button className="button" onClick={logout}>Déconnexion</button></Link>
                         </div>
                     ) : (

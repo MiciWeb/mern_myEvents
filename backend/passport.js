@@ -1,5 +1,5 @@
 require("dotenv").config({ path: "./config/.env" });
-const mongoose = require('mongoose');
+const UserModel = require("./models/user.model");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GithubStrategy = require("passport-github2").Strategy;
@@ -12,25 +12,10 @@ passport.use(
             clientSecret: process.env.CLIENT_SECRET,
             callbackURL: "/auth/google/callback",
         },
+
         async function (accessToken, refreshToken, profile, done) {
             try {
-                const userSchema = new mongoose.Schema({
-                    _id: String,
-                    username: {
-                        type: String,
-                        required: true,
-                    },
-                    email: {
-                        type: String,
-                    },
-                    avatar: String,
-                    bio: {
-                        type: String,
-                        max: 1024,
-                    },
-                });
-                const User = new mongoose.model("google-user", userSchema);
-                await User.findOne({ _id: profile.id }).then((item) => {
+                await UserModel.findOne({ _id: profile.id }).then((item) => {
                     if (item === null) {
                         var user1 = new User({
                             _id: profile.id,
@@ -68,22 +53,7 @@ passport.use(
         },
         async function (accessToken, refreshToken, profile, done) {
             try {
-                const userSchema = new mongoose.Schema({
-                    _id: String,
-                    username: {
-                        type: String,
-                    },
-                    email: {
-                        type: String,
-                    },
-                    avatar: String,
-                    bio: {
-                        type: String,
-                        max: 1024,
-                    },
-                });
-                const User = new mongoose.model("github-user", userSchema);
-                await User.findOne({ _id: profile.id }).then((item) => {
+                await UserModel.findOne({ _id: profile.id }).then((item) => {
                     if (item === null) {
                         console.log(profile)
                         var user1 = new User({

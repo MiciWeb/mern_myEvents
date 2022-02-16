@@ -48,4 +48,10 @@ a{
 .avatar{
     width: 30px;
     border-radius: 50px;
+    border: 1px solid;
+    transform: translate(-10px,10px);
+    margin-left: 15px;
+}
+.bonjour{
+    margin: 0;
 }

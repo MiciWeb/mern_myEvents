@@ -9,6 +9,7 @@ import './App.css';
 import HomePage from "./components/Homepage/HomePage";
 import SearchDetails from "./components/Search/SearchDetails";
 import Login from "./components/Login/Login";
+import Profil from "./components/Profil/Profil";
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/search" exact={true} element={<Search />} />
           <Route path="/search/:id" exact={true} element={<SearchDetails />} />
           <Route path="/login" exact={true} element={<Login />} />
+          <Route path="/profil" exact={true} element={<Profil />} />
         </Routes>
       </BrowserRouter>
     </div>
