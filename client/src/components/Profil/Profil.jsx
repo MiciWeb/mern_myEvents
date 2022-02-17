@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
 const Profil = () => {
-    // useEffect(() => {
-    //     fetch(`http://localhost:4000/api/user/${cookie}`, requestOptions)
-    //         .then((res) => res.json())
-    //         .then((data) => setData(data.records))
-    // }, [])
+    const [handleBio, sethandleBio] = useState(false);
+
+    const id = Cookies.get().id;
+
+    var requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: '{"bio": "fsdf"}'
+    };
+
+    useEffect(() => {
+        fetch(`/api/user/${id}`, requestOptions)
+            .then((res) => res.json())
+            .then((res) => console.log(res))
+    }, [])
+
     return (
         <div>
 

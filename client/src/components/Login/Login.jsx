@@ -1,14 +1,12 @@
 import React from 'react'
-// import { useCookie } from 'react-cookie';
 
 const Login = () => {
-    // const [cookies, setCookie, removeCookie] = useCookie(['user']);
 
     const google = () => {
-        window.open("http://localhost:4000/auth/google", "_self")
+        window.open("/auth/google", "_self")
     }
     const github = () => {
-        window.open("http://localhost:4000/auth/github", "_self");
+        window.open("/auth/github", "_self");
     };
 
     return (

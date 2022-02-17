@@ -22,6 +22,7 @@ router.get("/login/failed", (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
+    res.cookie('id', "null");
     req.logout();
     res.redirect(CLIENT_URL);
 });
