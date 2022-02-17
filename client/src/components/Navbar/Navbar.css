@@ -28,7 +28,7 @@ li:hover {
     cursor: pointer;
     color: white;
     font-size: 15px;
-    background-color: #4d60fc;
+    background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
     border: none;
     padding: 12px 19px;
     border-radius: 8px;
@@ -39,19 +39,18 @@ li:hover {
 }
 .logo {
     font-size: 23px;
-    color: #4d60fc;
+    color: #30d069;
 }
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-.avatar{
+.avatar {
     width: 30px;
     border-radius: 50px;
-    border: 1px solid;
-    transform: translate(-10px,10px);
+    transform: translate(-10px, 10px);
     margin-left: 15px;
 }
-.bonjour{
+.bonjour {
     margin: 0;
 }

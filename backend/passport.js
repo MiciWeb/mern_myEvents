@@ -17,7 +17,7 @@ passport.use(
             try {
                 await UserModel.findOne({ _id: profile.id }).then((item) => {
                     if (item === null) {
-                        var user1 = new User({
+                        var user1 = new UserModel({
                             _id: profile.id,
                             username:
                                 profile.displayName,
@@ -56,7 +56,7 @@ passport.use(
                 await UserModel.findOne({ _id: profile.id }).then((item) => {
                     if (item === null) {
                         console.log(profile)
-                        var user1 = new User({
+                        var user1 = new UserModel({
                             _id: profile.id,
                             username:
                                 profile.username,

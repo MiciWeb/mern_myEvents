@@ -11,22 +11,17 @@ export default function Navbar({ user }) {
         <div>
             <header>
                 <nav>
-                    <h1 className="logo"><Link to="/">WorkAway.</Link></h1>
+                    <h1 className="logo"><Link to="/">MyEvents.</Link></h1>
                     <ul>
-                        <li>Réservations</li>
-                        <li>Compte</li>
+                        <li>Événements</li>
+                        <Link to="/profil"><li>Compte</li></Link>
                         <li>Contact</li>
                         <li>À propos</li>
                     </ul>
                     {user ? (
                         <div>
                             <Link to="/profil">
-                                {user.username}
-                            <img
-                                    src={user.photos[0].value}
-                                    alt="profil-picture"
-                                    className="avatar"
-                                />
+                              
                             </Link>
                             <Link to="/logout"><button className="button" onClick={logout}>Déconnexion</button></Link>
                         </div>

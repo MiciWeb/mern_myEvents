@@ -29,6 +29,7 @@ section {
 }
 .hero {
   display: flex;
+  margin-top: 31px;
 }
 section > div {
   height: 100%;
@@ -54,8 +55,13 @@ section > div {
 }
 .hero-container-text p {
   color: #869ab7;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+.select-search {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
 .search-bar {
   width: 60%;
   height: 40px;

@@ -2,7 +2,7 @@ import "./Search.css"
 import { useEffect, useState } from 'react'
 import Select from 'react-select';
 import { Link, useLocation } from "react-router-dom";
-import {options} from "../city-data"
+import { options } from "../city-data"
 
 const Search = (props) => {
   const [data, setData] = useState([])
@@ -107,9 +107,12 @@ const Search = (props) => {
                       return (
                         <Link to={`${item.fields.uid}`}>
                           <li key={item.fields.uid} className="card">
+                            <div className="search-description">
+                              <h4 style={{ margin: 0 }} className="description">{item.fields.title}</h4>
+                              <p style={{ margin: 0 }} className="address">{item.fields.address}</p>
+                            </div>
                             <div className="card-img">
-                              <h4 className="description">{item.fields.title}</h4>
-                              <p className="address">{item.fields.address}</p>
+                              <img className="search-img" src={item.fields.image} alt="" />
                             </div>
                             <div className="card-text">
                               <p className="address">{item.fields.city}</p>

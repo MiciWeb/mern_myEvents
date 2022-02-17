@@ -15,14 +15,15 @@ export default function HomePage(props) {
                 <div className="hero">
                     <div className="hero-1">
                         <div className="hero-container-text">
-                            <h3>Bienvenue à <span style={{ color: "#3a50f8" }}>WorkAway</span>.<br /> La solution du travail de demain.</h3>
-                            <p>WorkAway est une plateforme qui met à disposition des espaces de travail dans les hôtels accessibles à tous et pour tous types de besoins.</p>
+                            <h3>Bienvenue à <span style={{ color: "#0FD054" }}>MyEvents.</span><br /> Le site qui répertorie les événements de demain.</h3>
+                            <p>MyEvents est une plateforme qui réunit tout les événements proche de chez vous et qui vous permet de créer des sorties entre ami(e)s.</p>
                             <div className="search-container">
                                 <Select
                                     defaultValue={setCity}
                                     onChange={setCity}
                                     options={options}
                                     defaultValue={{ label: "Ville", value: 0 }}
+                                    className="select-search"
                                 />
                                 <br />
                                 <Link to="/search" state={{ city: city.label, startDate: startDate, }}>
