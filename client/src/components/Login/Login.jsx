@@ -1,6 +1,8 @@
 import React from 'react'
+// import { useCookie } from 'react-cookie';
 
 const Login = () => {
+    // const [cookies, setCookie, removeCookie] = useCookie(['user']);
 
     const google = () => {
         window.open("http://localhost:4000/auth/google", "_self")

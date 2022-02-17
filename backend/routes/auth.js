@@ -5,11 +5,11 @@ const CLIENT_URL = "http://localhost:3000/";
 
 router.get("/login/success", (req, res) => {
     if (req.user) {
+        res.cookie('id', req.user.id);
         res.status(200).json({
             success: true,
             message: "successfull",
             user: req.user,
-            //   cookies: req.cookies
         });
     }
 });

@@ -5,7 +5,9 @@ const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const userRoutes = require("./routes/user.routes");
-// const postRoutes = require("./routes/post.routes");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+
 const app = express();
 require("./config/db");
 
@@ -15,7 +17,9 @@ app.use(
 
 app.use(passport.initialize())
 app.use(passport.session())
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(
     cors({
         origin: "http://localhost:3000",
@@ -23,6 +27,7 @@ app.use(
         credentials: true,
     })
 );
+
 
 app.use("/auth", authRoute);
 app.use("/api/user", userRoutes);
