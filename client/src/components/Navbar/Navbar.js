@@ -13,7 +13,7 @@ export default function Navbar({ user }) {
                 <nav>
                     <h1 className="logo"><Link to="/">MyEvents.</Link></h1>
                     <ul>
-                        <li>Événements</li>
+                        <Link to="/search" state={{ city: "" }}><li>Événements</li></Link>
                         <Link to="/profil"><li>Compte</li></Link>
                         <li>Contact</li>
                         <li>À propos</li>
@@ -21,7 +21,7 @@ export default function Navbar({ user }) {
                     {user ? (
                         <div>
                             <Link to="/profil">
-                              
+
                             </Link>
                             <Link to="/logout"><button className="button" onClick={logout}>Déconnexion</button></Link>
                         </div>

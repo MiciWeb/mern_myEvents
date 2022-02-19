@@ -7,7 +7,6 @@ import { options } from "../city-data"
 
 export default function HomePage(props) {
     const [city, setCity] = useState("")
-    const [startDate, setStartDate] = useState("")
 
     return (
         <div>
@@ -16,7 +15,7 @@ export default function HomePage(props) {
                     <div className="hero-1">
                         <div className="hero-container-text">
                             <h3>Bienvenue à <span style={{ color: "#0FD054" }}>MyEvents.</span><br /> Le site qui répertorie les événements de demain.</h3>
-                            <p>MyEvents est une plateforme qui réunit tout les événements proche de chez vous et qui vous permet de créer des sorties entre ami(e)s.</p>
+                            <p>MyEvents est une plateforme qui réunit tout les événements proche de chez vous et qui vous permet de créer des sorties entre futurs ami(e)s.</p>
                             <div className="search-container">
                                 <Select
                                     defaultValue={setCity}
@@ -26,7 +25,7 @@ export default function HomePage(props) {
                                     className="select-search"
                                 />
                                 <br />
-                                <Link to="/search" state={{ city: city.label, startDate: startDate, }}>
+                                <Link to="/search" state={{ city: city.label }}>
                                     <button
                                         className="button"
                                     >

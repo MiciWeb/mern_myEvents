@@ -36,7 +36,6 @@ section > div {
 }
 .hero-1 {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 50%;
 }
@@ -44,22 +43,25 @@ section > div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 55%;
+  height: 90%;
   width: 83%;
 }
 .hero-container-text h3 {
   font-size: 38px;
   font-weight: 400;
   color: #161c2d;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .hero-container-text p {
   color: #869ab7;
-  margin-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  transform: translateY(-18px);
 }
 .select-search {
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
+  transform: translateY(-20px);
 }
 
 .search-bar {
@@ -71,6 +73,17 @@ section > div {
   margin-right: 20px;
   margin-bottom: 20px;
   padding-left: 6px;
+}
+.button-2{
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
+  border: none;
+  padding: 12px 19px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 .search-date {
   width: 60%;

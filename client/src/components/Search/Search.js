@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { Link, useLocation } from "react-router-dom";
 import { options } from "../city-data"
 
-const Search = (props) => {
+const Search = () => {
   const [data, setData] = useState([])
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")
@@ -29,7 +29,12 @@ const Search = (props) => {
       fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${city.label}`, requestOptions)
         .then((res) => res.json())
         .then((data) => setData(data.records))
-    } else {
+    } else if (city.label === undefined) {
+      fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${location.state.city}&refine.date_start=${startDate}`, requestOptions)
+        .then((res) => res.json())
+        .then((data) => setData(data.records))
+    }
+    else {
       fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&sort=date_start&rows=100&refine.city=${city.label}&refine.date_start=${startDate}`, requestOptions)
         .then((res) => res.json())
         .then((data) => setData(data.records))
@@ -107,12 +112,12 @@ const Search = (props) => {
                       return (
                         <Link to={`${item.fields.uid}`}>
                           <li key={item.fields.uid} className="card">
+                            <div className="card-img">
+                              <img className="search-img" src={item.fields.image} alt="" />
+                            </div>
                             <div className="search-description">
                               <h4 style={{ margin: 0 }} className="description">{item.fields.title}</h4>
                               <p style={{ margin: 0 }} className="address">{item.fields.address}</p>
-                            </div>
-                            <div className="card-img">
-                              <img className="search-img" src={item.fields.image} alt="" />
                             </div>
                             <div className="card-text">
                               <p className="address">{item.fields.city}</p>

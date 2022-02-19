@@ -5,6 +5,7 @@ const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const userRoutes = require("./routes/user.routes");
+const eventsRoutes = require("./routes/events.routes");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
@@ -33,7 +34,7 @@ app.use(cors(corsOptions));
 
 app.use("/auth", authRoute);
 app.use("/api/user", userRoutes);
-// app.use("/api/post", postRoutes);
+app.use("/api/events", eventsRoutes);
 
 
 app.listen("4000", () => {
