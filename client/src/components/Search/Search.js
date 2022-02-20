@@ -91,9 +91,6 @@ const Search = () => {
               </div>
 
               <button onClick={getData} className="button">Rechercher</button>
-
-
-
             </div>
 
           </div>

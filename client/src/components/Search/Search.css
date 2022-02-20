@@ -58,7 +58,7 @@ section {
 .left-arrow{
     position: absolute;
     left: -40px;
-    color: #2bb7da;
+    color: #31d35c;
     transform: scale(2);
     top: 50%;
     cursor: pointer;
@@ -68,10 +68,8 @@ section {
     width: 50vw;
     height: 500px;
     margin: auto;
-    border-bottom: 2px solid #31d35c;
-    border-right: 2px solid #31d35c;
-    border-left: 2px solid #2bb7da;
-    border-top: 2px solid #2bb7da;    border-radius: 25px;
+    border: 2px solid #31d35c;
+    border-radius: 25px;
 }
 .card-img-details {
     width: 90%;
@@ -93,7 +91,7 @@ li {
     flex-direction: column;
     justify-content: space-between;
     color: white;
-    border-top: 2px solid #31d35c;
+    border-top: 2px solid #2bb7da;
     text-shadow: rgb(0 0 0 / 80%) 0 1px 0;
 }
 .description {
@@ -103,9 +101,11 @@ li {
     background: rgba(0, 0, 0, 0.45);
     width: 100%;
     height: 100px;
-    overflow: auto;
     z-index: -5;
     border-bottom: 1px solid;
+    border-top-left-radius: 18px;
+}
+.card-img img{
     border-top-left-radius: 18px;
 }
 .address {
@@ -186,7 +186,7 @@ li {
 .form-contact__topic-text {
     font-size: 23px;
     font-weight: 600;
-    color: #2bb7da;
+    color: #31d35c;
     padding: 30px;
     text-align: center;
     transform: translateY(15px);
