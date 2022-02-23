@@ -1,4 +1,5 @@
 ![Alt text](https://github.com/MiciWeb/mern_myEvents/blob/mici/client/src/image/github/no-responsive.svg)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com)
 
 # But du projet
@@ -27,19 +28,10 @@ On peut se connecter / s'inscrire via google ou github.
 On peut ensuite modifier notre bio sur notre profil.
 ![Alt text](https://github.com/MiciWeb/mern_myEvents/blob/mici/client/src/image/github/profil.png)
 
-
-
-
-
-## Fonctionnalité du projet
-* On peut s'inscrire et se connecter, une fois connecté nous avons accés à la modification de notre profil ainsi qu'a l'ajout d'une bio ou d'une photo de profil.
-* On peut ensuite pouvoir écrire, modifer, ou supprimer des posts dans le fil d'actualité ainsi que joindre une photo ou un lien youtube à ces publications.
-* Nous pouvons commenter et aimer touts nos posts présent sur le site ainsi que ceux fait par les autres utilisateurs que nous pouvons follow et unfollow.
-* Il est possible de modifier, aimer et supprimer nos commentaires.
-* Il existe une page tendance ou les publications les plus en vogue du réseau apparaissent en premier.
-* Il existe aussi un composant du site qui nous suggère automatiquement au hasard des utilisateurs à suivre.
-## Lancer le projet
-* Le site est disponible à cette [adresse]().
+## Technologies du projet
+Le site utilise l'Api [OpenDataSoft](https://public.opendatasoft.com/explore/dataset/evenements-publics-cibul/ap) pour lister les événements.
+La gestion de sorties se fait via [express js](https://expressjs.com/fr/) et est stocké dans la base de donnée [MongoDb](https://www.mongodb.com/)
 
 ### Auteur
 * **Micipsa Sersour** _alias_ [@MiciWeb](https://github.com/MiciWeb).
+* Finit le 22/02/2222
