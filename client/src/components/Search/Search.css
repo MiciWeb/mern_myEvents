@@ -77,8 +77,16 @@ section {
     height: 300px;
     margin-bottom: 10px;
 }
-.card-img-details img{
+.card-sortie{
+    border: 1px solid #2bb7da;
+    border-radius: 12px;
+    margin: 15px;
+    text-align: center;
 }
+.card-sortie h3{
+    color: #2bb7da;
+}
+
 li {
     list-style: none;
 }
